@@ -1,0 +1,5 @@
+[wokwi]
+version = 1
+firmware = '0_sixty_base_via.hex'
+elf = 'start4.elf'
+rfc2217ServerPort = 4000

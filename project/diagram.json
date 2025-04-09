@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Anthropic Assistant",
+  "editor": "system-design",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "board-esp32-s3-devkitc-1"
+    },
+    {
+      "id": "led",
+      "type": "led-module",
+      "color": "blue",
+      "pin": "GPIO2"
+    },
+    {
+      "id": "wifi",
+      "type": "wifi-module"
+    }
+  ],
+  "connections": [
+    ["esp:GPIO2", "led:input", "LED Control"],
+    ["esp:WIFI", "wifi:antenna", "Network Connection"],
+    ["esp:TX", "$serialMonitor:RX", "Serial Debug"],
+    ["esp:RX", "$serialMonitor:TX", "Serial Input"]
+  ],
+  "notes": [
+    "Web server runs on ESP32-S3",
+    "Built-in LED on GPIO2",
+    "Toggle LED via /toggle URL"
+  ]
+}
